@@ -47,7 +47,7 @@ class Game
   def play
     @fragment = ""
     until won?
-      # puts %x{clear}
+      puts %x{clear}
       display_standings
       puts "\n\n#{@current_player.name}'s turn."
       display
@@ -56,7 +56,6 @@ class Game
     end
     prev_player!
     puts "\n\n#{@current_player.name} loses!"
-    # next_player!
     @losses[@current_player.name] += 1
     unless losses[@current_player.name] == 5
       play
@@ -97,11 +96,8 @@ if __FILE__ == $PROGRAM_NAME
   player1 = Player.new("Rob")
   player2 = Player.new("Ant")
   player3 = Computer.new("PC", dictionary)
-
   player4 = Computer.new("Mac", dictionary)
-  players = [player4, player2]
-
-  # dictionary = ["the", "cat", "went", "to", "school"]
+  players = [player1, player2, player4, player3]
   game = Game.new(players, "", dictionary)
   game.play
 end
