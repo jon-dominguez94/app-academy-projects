@@ -1,0 +1,1 @@
+alias gca="git filter-branch -f --env-filter \"GIT_AUTHOR_NAME='NAME'; GIT_AUTHOR_EMAIL='EMAIL'; GIT_COMMITTER_NAME='NAME'; GIT_COMMITTER_EMAIL='EMAIL';\" HEAD; git remote add origin PROJECT_REPO_URL; git pull origin master --no-edit --allow-unrelated-histories;"
